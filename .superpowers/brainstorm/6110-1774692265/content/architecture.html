@@ -1,0 +1,73 @@
+<h2>Setup Claude Config — Architecture</h2>
+<p class="subtitle">How the slash command works end-to-end</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">Command Flow</div>
+    <div class="mockup-body" style="font-family: monospace; font-size: 14px; line-height: 2;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <div style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;">1. User runs /setup-claude-config</div>
+        <span style="font-size: 20px;">→</span>
+        <div style="background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px;">Command prompt loaded</div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <div style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;">2. Scan base path</div>
+        <span style="font-size: 20px;">→</span>
+        <div style="background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px;">List projects as numbered menu</div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <div style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;">3. User picks project</div>
+        <span style="font-size: 20px;">→</span>
+        <div style="background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px;">Auto-detect tech stack</div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <div style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;">4. Present config preview</div>
+        <span style="font-size: 20px;">→</span>
+        <div style="background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px;">CLAUDE.md + settings.json + optional commands</div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="background: #6366f1; color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;">5. User confirms/edits</div>
+        <span style="font-size: 20px;">→</span>
+        <div style="background: #22c55e; color: white; padding: 8px 16px; border-radius: 8px; font-weight: bold;">Files written to project</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top: 24px;">
+  <h3>Files Generated</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+    <div style="background: #1e293b; border-radius: 8px; padding: 16px;">
+      <div style="color: #6366f1; font-weight: bold; margin-bottom: 8px;">CLAUDE.md</div>
+      <ul style="color: #94a3b8; font-size: 13px; padding-left: 16px;">
+        <li>Project description</li>
+        <li>Tech stack</li>
+        <li>Coding conventions</li>
+        <li>Build/test/run cmds</li>
+        <li>File structure</li>
+        <li>Permissions & rules</li>
+      </ul>
+    </div>
+    <div style="background: #1e293b; border-radius: 8px; padding: 16px;">
+      <div style="color: #6366f1; font-weight: bold; margin-bottom: 8px;">.claude/settings.local.json</div>
+      <ul style="color: #94a3b8; font-size: 13px; padding-left: 16px;">
+        <li>Stack-based permissions</li>
+        <li>Bash allow rules</li>
+        <li>Model preferences</li>
+      </ul>
+    </div>
+    <div style="background: #1e293b; border-radius: 8px; padding: 16px;">
+      <div style="color: #6366f1; font-weight: bold; margin-bottom: 8px;">.claude/commands/ (opt-in)</div>
+      <ul style="color: #94a3b8; font-size: 13px; padding-left: 16px;">
+        <li>run-tests.md</li>
+        <li>build.md</li>
+        <li>lint.md</li>
+        <li>Stack-specific cmds</li>
+      </ul>
+    </div>
+  </div>
+</div>
